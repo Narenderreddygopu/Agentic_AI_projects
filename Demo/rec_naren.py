@@ -17,7 +17,7 @@ def recursive_search(name_list, target_name, index=0):
 # Example usage
 names = ["Alice", "Bob", "Narender", "Charlie"]
 found = recursive_search(names, "Narender")
-print("Name found:", found)
+print("Name found Narender:", found)
 
 
 
