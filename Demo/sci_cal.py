@@ -1,40 +1,17 @@
-# Python
-import tkinter as tk
+# streamlit_scientific_calculator.py
+
+import streamlit as st
 import math
 
-def on_click(event):
-    text = event.widget.cget("text")
-    if text == "=":
-        try:
-            expr = entry.get()
-            # Replace function names with math module equivalents
-            expr = expr.replace('sin', 'math.sin')
-            expr = expr.replace('cos', 'math.cos')
-            expr = expr.replace('tan', 'math.tan')
-            expr = expr.replace('log', 'math.log10')
-            expr = expr.replace('ln', 'math.log')
-            expr = expr.replace('sqrt', 'math.sqrt')
-            expr = expr.replace('^', '**')
-            result = eval(expr)
-            entry.delete(0, tk.END)
-            entry.insert(tk.END, str(result))
-        except Exception:
-            entry.delete(0, tk.END)
-            entry.insert(tk.END, "Error")
-    elif text == "C":
-        entry.delete(0, tk.END)
-    else:
-        entry.insert(tk.END, text)
+st.set_page_config(page_title="Scientific Calculator", layout="wide")
 
-root = tk.Tk()
-root.title("Scientific Calculator")
-root.geometry("400x500")
-root.resizable(False, False)
+st.title("🔬 Scientific Calculator")
 
-entry = tk.Entry(root, font="Arial 20", borderwidth=2, relief=tk.RIDGE, justify='right')
-entry.pack(fill=tk.BOTH, ipadx=8, ipady=15, pady=10, padx=10)
+# Text input for expression
+expr = st.text_input("Enter expression:", "")
 
-button_texts = [
+# Buttons layout
+buttons = [
     ['7', '8', '9', '/', 'C'],
     ['4', '5', '6', '*', '('],
     ['1', '2', '3', '-', ')'],
@@ -43,26 +20,43 @@ button_texts = [
     ['ln', 'pi', 'e', '', '']
 ]
 
-button_frame = tk.Frame(root)
-button_frame.pack()
+# Store user input in session state
+if 'expression' not in st.session_state:
+    st.session_state.expression = ""
 
-for i, row in enumerate(button_texts):
-    for j, text in enumerate(row):
-        if text:
-            btn = tk.Button(button_frame, text=text, font="Arial 14", width=6, height=2)
-            btn.grid(row=i, column=j, padx=3, pady=3)
-            btn.bind("<Button-1>", on_click)
+# Function to handle button click
+def on_click(btn_text):
+    if btn_text == "=":
+        try:
+            exp = st.session_state.expression
+            # Replace function names with math equivalents
+            exp = exp.replace('sin', 'math.sin')
+            exp = exp.replace('cos', 'math.cos')
+            exp = exp.replace('tan', 'math.tan')
+            exp = exp.replace('log', 'math.log10')
+            exp = exp.replace('ln', 'math.log')
+            exp = exp.replace('sqrt', 'math.sqrt')
+            exp = exp.replace('^', '**')
+            result = eval(exp)
+            st.session_state.expression = str(result)
+        except Exception:
+            st.session_state.expression = "Error"
+    elif btn_text == "C":
+        st.session_state.expression = ""
+    elif btn_text == 'pi':
+        st.session_state.expression += str(math.pi)
+    elif btn_text == 'e':
+        st.session_state.expression += str(math.e)
+    else:
+        st.session_state.expression += btn_text
 
-# Insert constants handling
-def insert_constant(const):
-    if const == 'pi':
-        entry.insert(tk.END, str(math.pi))
-    elif const == 'e':
-        entry.insert(tk.END, str(math.e))
+# Display current expression
+st.text_input("Expression:", value=st.session_state.expression, key="display", disabled=True)
 
-for const, row, col in [('pi', 5, 1), ('e', 5, 2)]:
-    btn = tk.Button(button_frame, text=const, font="Arial 14", width=6, height=2,
-                    command=lambda c=const: insert_constant(c))
-    btn.grid(row=row, column=col, padx=3, pady=3)
+# Create buttons
+for row in buttons:
+    cols = st.columns(len(row))
+    for col, btn_text in zip(cols, row):
+        if btn_text:
+            col.button(btn_text, on_click=lambda b=btn_text: on_click(b))
 
-root.mainloop()
