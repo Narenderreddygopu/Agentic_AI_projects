@@ -1,0 +1,448 @@
+Day 1 
+Day 1 — Rethinking AI: From Answers to Decisions
+Class goal:
+ By the end of this session, students should clearly understand why Agentic AI exists and why traditional AI approaches break in real systems.
+________________________________________
+1. Why Today’s AI Is Still Mostly Passive 
+Most AI systems today are reactive.
+●	You ask a question → AI answers
+
+●	You send input → AI produces output
+
+●	The interaction ends
+
+Even advanced models behave like stateless functions.
+Technically:
+●	No ownership of outcome
+
+●	No memory beyond context window
+
+●	No responsibility for what happens after output
+
+This is fine for:
+●	Chat
+
+●	Content generation
+
+●	One-off analysis
+
+It fails for:
+●	Long workflows
+
+●	Real-world automation
+
+●	Tasks with uncertainty
+
+This limitation is the reason Agentic AI exists.
+________________________________________
+2. The Core Shift: Who Controls the Flow? 
+Traditional software:
+●	Developers control execution
+
+●	Logic is predefined
+
+●	Programs do not decide what to do next
+
+Agentic systems:
+●	The model influences the next action
+
+●	Execution is decision-driven
+
+●	The system adapts based on results
+
+This is the key technical shift:
+Agentic AI introduces probabilistic control flow into software systems.
+The program no longer says:
+“Do A, then B, then C.”
+It says:
+“Here is the goal. Decide the next step.”
+This is powerful — and dangerous — if not engineered properly.
+________________________________________
+3. Why Chatbots Are Not Agents
+A chatbot:
+●	Responds once
+
+●	Ends interaction
+
+●	Cannot recover from failure
+
+An agent:
+●	Operates in loops
+
+●	Maintains state
+
+●	Observes consequences
+
+●	Tries again if needed
+
+The difference is not intelligence.
+ It is architecture.
+Aspect	Chatbot	Agent
+Execution	Single-turn	Multi-step
+State	Temporary	Persistent
+Tools	Optional	Core
+Failure	Terminal	Recoverable
+If a system cannot fail, observe, and retry, it is not an agent.
+________________________________________
+4. The Agent Loop 
+At a technical level, every agent reduces to a loop:
+1.	Receive a goal
+
+2.	Observe current state
+
+3.	Decide the next action
+
+4.	Execute using tools
+
+5.	Observe the result
+
+6.	Continue or stop
+
+This loop is the smallest unit of agency.
+Everything else — memory, planning, tools — exists to make this loop stable and safe.
+Without this loop:
+●	There is no autonomy
+
+●	There is no ownership
+
+●	There is no agent
+
+________________________________________
+5. Why This Matters in Real Applications
+Agentic systems are not built for demos.
+ They are built for operational tasks.
+Examples:
+●	Automated incident response
+
+●	Research assistants that run for hours
+
+●	AI dev tools that modify code, test, and retry
+
+●	Support systems that escalate intelligently
+
+All of these require:
+●	Memory
+
+●	Tool usage
+
+●	Decision-making across time
+
+This is why Agentic AI is closer to systems engineering than prompt writing.
+________________________________________
+6. A Gentle Technical Glimpse 
+Today, we will only preview, not deep-dive.
+Students will see:
+●	How an LLM behaves as a plain function
+
+●	Why structure matters
+
+●	Why retries are needed
+
+The takeaway is not code mastery.
+ The takeaway is this realization:
+“A single LLM call cannot be trusted to run a system.”
+That insight sets up everything that follows.
+________________________________________
+7. What This Course Will Gradually Build 
+Over the next weeks, students will learn to:
+●	Convert LLMs into decision-makers
+
+●	Add memory and state
+
+●	Introduce planning and reflection
+
+●	Coordinate multiple agents
+
+●	Build production-style AI systems
+
+Not immediately.
+ Not magically.
+ Step by step.
+________________________________________
+8. End-of-Class Anchor Thought 
+Chatbots answer.
+ Agents operate.
+ Systems survive.
+This course is about building the third category.
+
+ 
+Day 2 
+PART 1: THEORY 
+1. Why We Start With Data 
+In AI, intelligence does not start with models.
+ It starts with what the system is allowed to observe.
+Data defines:
+●	What patterns can be learned
+
+●	What decisions are even possible
+
+●	What errors will silently propagate
+
+Later, when we build agents:
+●	Agents will observe data
+
+●	Agents will reason over observations
+
+●	Agents will act based on that reasoning
+
+If the data layer is weak, autonomy amplifies mistakes.
+________________________________________
+2. What “Data” Means in AI (System View)
+Data is not just “input”.
+In AI systems, data is:
+●	The representation of reality
+
+●	A compressed view of the world
+
+●	Always incomplete and biased
+
+Key idea to stress:
+AI systems never see reality.
+ They see data-shaped reality.
+________________________________________
+3. Types of Data You’ll Actually Work With
+Structured Data
+●	Tables, CSVs, databases
+
+●	Fixed columns and types
+
+●	Easy to validate
+
+●	Easy to misuse
+
+Examples:
+●	User records
+
+●	Transactions
+
+●	Logs
+
+Unstructured Data
+●	Text, documents, messages
+
+●	No fixed schema
+
+●	High ambiguity
+
+●	Primary input for LLMs later
+
+Important forward link:
+Agentic systems often combine structured data (state, logs)
+ with unstructured data (text, instructions).
+________________________________________
+4. Why Raw Data Is Never Used Directly
+Raw data is:
+●	Incomplete
+
+●	Inconsistent
+
+●	Noisy
+
+●	Full of hidden assumptions
+
+Models do not learn from reality.
+ They learn from processed representations.
+Therefore:
+●	Cleaning is part of intelligence
+
+●	Preprocessing decisions shape behavior
+
+●	Ignoring this leads to false confidence
+
+________________________________________
+5. A Critical Concept: Data Leakage (Light, Conceptual)
+Data leakage happens when:
+●	Information from the future leaks into training data
+
+●	Models appear accurate but fail in practice
+
+Why this matters later:
+●	Agents trust their observations
+
+●	If observations are contaminated, planning collapses
+
+●	The system becomes confidently wrong
+
+Key line:
+Bad data creates intelligent-looking failures.
+________________________________________
+PART 2: PRACTICAL (30–35 minutes, VS Code)
+Objective of Today’s Practical
+●	Set up the course workspace
+
+●	Load and inspect data
+
+●	Identify data quality issues
+
+●	Make explicit decisions, not silent assumptions
+
+No ML yet. No AI yet. This is intentional.
+________________________________________
+Step 1: Create Course Workspace (5 minutes)
+Open VS Code → Terminal
+mkdir agentic_course
+cd agentic_course
+
+Explain:
+This folder will stay with us for the entire program.
+________________________________________
+Step 2: Create Foundations Folder
+mkdir 01_data_foundations
+cd 01_data_foundations
+mkdir day02_data_basics
+cd day02_data_basics
+
+Final path:
+agentic_course/01_data_foundations/day02_data_basics
+
+________________________________________
+Step 3: Create Virtual Environment (One-Time)
+python -m venv venv
+
+Activate:
+venv\Scripts\activate   # Windows
+# source venv/bin/activate  # macOS/Linux
+
+Explain briefly:
+●	This isolates dependencies
+
+●	Prevents conflicts later when we add AI libraries
+
+________________________________________
+Step 4: Install Required Libraries
+pip install pandas numpy
+
+Explain:
+●	numpy → numerical foundation
+
+●	pandas → structured data handling
+
+
+D:\>mkdir Agentic_Course
+
+D:\>cd Agentic_Course
+
+D:\Agentic_Course>cd .
+
+D:\Agentic_Course>cd ..
+
+D:\>cd datachat-prod
+
+D:\datachat-prod>cd backend
+
+D:\datachat-prod\backend>cd .
+
+D:\datachat-prod\backend>cd ..
+
+D:\Agentic_Course>cd .
+
+D:\Agentic_Course>cd ..
+
+D:\>cd datachat-prod
+
+D:\datachat-prod>cd backend
+
+D:\datachat-prod\backend>cd .
+
+D:\datachat-prod\backend>cd ..
+D:\Agentic_Course>cd ..
+
+D:\>cd datachat-prod
+
+D:\datachat-prod>cd backend
+
+D:\datachat-prod\backend>cd .
+
+D:\datachat-prod\backend>cd ..
+
+D:\datachat-prod>cd backend
+
+D:\datachat-prod\backend>cd .
+
+D:\datachat-prod\backend>cd ..
+D:\datachat-prod\backend>cd .
+
+D:\datachat-prod\backend>cd ..
+
+D:\datachat-prod\backend>cd ..
+D:\datachat-prod\backend>cd ..
+
+D:\datachat-prod>cd ..
+
+D:\>cd Agentic_Course
+
+D:\Agentic_Course>cd f1
+
+D:\Agentic_Course\f1>cd .
+
+D:\Agentic_Course\f1>cd ..
+
+D:\Agentic_Course>rmdir f1
+
+D:\Agentic_Course>del test.txt
+
+D:\Agentic_Course>type nul > test.txt
+
+D:\Agentic_Course>del test.txt
+
+D:\Agentic_Course>echo hi > test.txt
+
+D:\Agentic_Course>python test.py
+
+D:\Agentic_Course>python test.py
+hello
+
+D:\Agentic_Course>python -m venv classroom
+
+D:\Agentic_Course>pip install pandas
+Defaulting to user installation because normal site-packages is not writeable
+Requirement already satisfied: pandas in c:\users\lenovo\appdata\roaming\python\python313\site-packages (2.3.0)
+Requirement already satisfied: numpy>=1.26.0 in c:\users\lenovo\appdata\roaming\python\python313\site-packages (from pandas) (2.2.6)
+Requirement already satisfied: python-dateutil>=2.8.2 in c:\users\lenovo\appdata\roaming\python\python313\site-packages (from pandas) (2.9.0.post0)
+Requirement already satisfied: pytz>=2020.1 in c:\users\lenovo\appdata\roaming\python\python313\site-packages (from pandas) (2025.2)
+Requirement already satisfied: tzdata>=2022.7 in c:\users\lenovo\appdata\roaming\python\python313\site-packages (from pandas) (2025.2)
+Requirement already satisfied: six>=1.5 in c:\users\lenovo\appdata\roaming\python\python313\site-packages (from python-dateutil>=2.8.2->pandas) (1.17.0)
+
+[notice] A new release of pip is available: 25.0.1 -> 25.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+D:\Agentic_Course>classroom/Scripts/activate
+'classroom' is not recognized as an internal or external command,
+operable program or batch file.
+
+D:\Agentic_Course>classroom\Scripts\activate
+
+(classroom) D:\Agentic_Course>pip install pandas
+Collecting pandas
+  Using cached pandas-3.0.0-cp313-cp313-win_amd64.whl.metadata (19 kB)
+Collecting numpy>=1.26.0 (from pandas)
+  Using cached numpy-2.4.1-cp313-cp313-win_amd64.whl.metadata (6.6 kB)
+Collecting python-dateutil>=2.8.2 (from pandas)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting tzdata (from pandas)
+  Using cached tzdata-2025.3-py2.py3-none-any.whl.metadata (1.4 kB)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting tzdata (from pandas)
+  Using cached tzdata-2025.3-py2.py3-none-any.whl.metadata (1.4 kB)
+  Using cached tzdata-2025.3-py2.py3-none-any.whl.metadata (1.4 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->pandas)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Downloading pandas-3.0.0-cp313-cp313-win_amd64.whl (9.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.7/9.7 MB 3.9 MB/s eta 0:00:00
+Using cached numpy-2.4.1-cp313-cp313-win_amd64.whl (12.3 MB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached tzdata-2025.3-py2.py3-none-any.whl (348 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Installing collected packages: tzdata, six, numpy, python-dateutil, pandas
+Successfully installed numpy-2.4.1 pandas-3.0.0 python-dateutil-2.9.0.post0 six-1.17.0 tzdata-2025.3
+
+[notice] A new release of pip is available: 25.0.1 -> 25.3
+[notice] To update, run: python.exe -m pip install --upgrade pip
+
+(classroom) D:\Agentic_Course>deactivate
+D:\Agentic_Course>classroom\Scripts\activate
+
+(classroom) D:\Agentic_Course>
+
+
