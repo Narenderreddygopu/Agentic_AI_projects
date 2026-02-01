@@ -21,7 +21,11 @@ try:
 
     # Show first rows
     logger.info("First 5 rows:")
-    logger.info("\n%s", df.head())
+    logger.info("Head:\n%s", df.head())
+    logger.info("Rows: %d", len(df))
+    logger.info("Nulls:\n%s", df.isnull().sum())
+    logger.info("Duplicates: %d", df.duplicated().sum())
+
 
     # Info
     logger.info("Data Info:")
