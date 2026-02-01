@@ -9,7 +9,7 @@ logging.basicConfig(
 )
 start_time = datetime.now()
 file_path = "https://raw.githubusercontent.com/Narenderreddygopu/Agentic_AI_projects/main/test_data/AuthContractors.csv"
-logging.info(f"Process started at: {start_time}")
+logging.info(f"Process started at time: {start_time}")
 try:
     logging.info(f"Starting file load: {file_path}")
 
