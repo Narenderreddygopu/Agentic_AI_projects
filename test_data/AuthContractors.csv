@@ -10,7 +10,7 @@ employeeId,firstName,lastName,managerId,fullName,email,department,region,locatio
 1a2b3a4c,Brian,Nelson,1a2b3a,Brian.Nelson,Brian.Nelson@demoexample.com,Human Resources,Americas,Brazil,FALSE,"R03e, L09e"
 1a2b3a4d,Sharon,Carter,1a2b3a,Sharon.Carter,Sharon.Carter@demoexample.com,Human Resources,Americas,Brazil,FALSE,"R03e, L09e"
 1a2b3b4c,Laura,Turner,1a2b3b,Laura.Turner,Laura.Turner@demoexample.com,Human Resources,Americas,Brazil,FALSE,"R03e, L09e"
-1a2b3b4d,Kevin,Phillips,1a2b3b,Kevin.Phillips,Kevin.Phillips@demoexample.com,Human Resources,Americas,Brazil,FALSE,"R03e, L09e"
+1a2b3b4d,Kevin,Phillips,1a2b3b,Kevin.Phillips,Kevin.Phillips@demoexample.com,Human Resources,Americas,NULL,FALSE,"R03e, L09e"
 1a2b3c4c,Matthew,Edwards,1a2b3c,Matthew.Edwards,Matthew.Edwards@demoexample.com,Inventory,Americas,Brazil,FALSE,"R03e, L09e"
 1a2b3c4d,Deborah,Collins,1a2b3c,Deborah.Collins,Deborah.Collins@demoexample.com,Inventory,Americas,Brazil,FALSE,"R03e, L09e"
 1a2b3d4c,Shirley,Rogers,1a2b3d,Shirley.Rogers,Shirley.Rogers@demoexample.com,Inventory,Americas,Brazil,FALSE,"R03e, L09e"
@@ -71,3 +71,6 @@ employeeId,firstName,lastName,managerId,fullName,email,department,region,locatio
 1c2c3c4d,Carmen,Hansen,1c2c3c,Carmen.Hansen,Carmen.Hansen@demoexample.com,Finance,Asia-Pacific,Taipei,FALSE,"R02e, L06e"
 1c2c3d4c,Cindy,Little,1c2c3d,Cindy.Little,Cindy.Little@demoexample.com,Finance,Asia-Pacific,Taipei,FALSE,"R02e, L06e"
 1c2c3d4d,Allen,Burton,1c2c3d,Allen.Burton,Allen.Burton@demoexample.com,Finance,Asia-Pacific,Taipei,FALSE,"R02e"
+1c2c3d4c,Cindy,Little,1c2c3d,Cindy.Little,Cindy.Little@demoexample.com,Finance,Asia-Pacific,Taipei,FALSE,"R02e, L06e"
+1c2c3d4d,Allen,Burton,1c2c3d,Allen.Burton,Allen.Burton@demoexample.com,Finance,Asia-Pacific,Taipei,FALSE,"R02e"
+
