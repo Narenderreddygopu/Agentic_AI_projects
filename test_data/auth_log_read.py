@@ -1,14 +1,15 @@
 import pandas as pd
 import logging
+from datetime import datetime
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s"
 )
-
+start_time = datetime.now()
 file_path = "https://raw.githubusercontent.com/Narenderreddygopu/Agentic_AI_projects/main/test_data/AuthContractors.csv"
-
+logging.info(f"Process started at: {start_time}")
 try:
     logging.info(f"Starting file load: {file_path}")
 
@@ -38,3 +39,10 @@ try:
 
 except Exception as e:
     logging.error(f"File load failed: {e}", exc_info=True)
+
+finally:
+    end_time = datetime.now()
+    duration = end_time - start_time
+    logging.info("Job finished")
+    logging.info(f"End time: {end_time}")
+    logging.info(f"Total duration: {duration}")
