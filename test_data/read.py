@@ -5,9 +5,16 @@ file_path = r"/mnt/c/Users/gopur/OneDrive/Documents/Agentic_ai/test_data/data.cs
 # Read CSV
 df = pd.read_csv(file_path)
 print(df)
-def fun(a,b): #definition of a function
-    print("calling from the function")
-    print(a+b)
+print("\n")
+print("\nCalling from the function a, b\n")
+def fun():
+    a = 10
+    b = 20
+    print(f"a: {a}, b: {b}")
+    print(f"SUM OF a and b is : {a + b}")
+    print(f"Product OF a and b is : {a * b}")  
+fun()    
+
 
 #fun(5,7) # calling a function
 
