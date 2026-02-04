@@ -2,6 +2,7 @@
 
 print(np.random.rand(5))
 state = (state × A + B) mod M
+ s=  state * multiplier + add operation) mod M
 random_float = state / M
 
 
