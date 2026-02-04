@@ -1,0 +1,4 @@
+p=(click) :  0.34
+p=(click|premium) :  0.67
+likelihood (prob = 0.8) :  0.1024
+likelihood (prob = 0.2) :  0.006400000000000002
