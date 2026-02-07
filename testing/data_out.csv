@@ -1,0 +1,7 @@
+user_id,age,country,signup_days,spend,high_value
+1,25.0,India,30,1200.0,False
+2,32.0,USA,45,2300.0,True
+3,,India,10,300.0,False
+4,29.0,UK,60,,False
+5,41.0,India,90,5400.0,True
+6,19.0,USA,5,100.0,False

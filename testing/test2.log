@@ -1,0 +1,8 @@
+2026-02-06 20:55:09,022 | INFO | the code has begun
+2026-02-06 20:55:09,028 | INFO | Customer 1 is a low value customer
+2026-02-06 20:55:09,029 | WARNING | Customer 2 is a high value customer
+2026-02-06 20:55:09,031 | INFO | Customer 3 is a low value customer
+2026-02-06 20:55:09,033 | INFO | Customer 4 is a low value customer
+2026-02-06 20:55:09,034 | WARNING | Customer 5 is a high value customer
+2026-02-06 20:55:09,035 | INFO | Customer 6 is a low value customer
+2026-02-06 20:55:09,036 | INFO | the code has ended

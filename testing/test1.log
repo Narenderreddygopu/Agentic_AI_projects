@@ -1,0 +1,120 @@
+2026-02-06 15:18:12,397 - DEBUG - This is a debug message
+2026-02-06 15:18:12,398 - INFO - This is an info message
+2026-02-06 15:18:12,399 - WARNING - This is a warning message
+2026-02-06 15:18:12,399 - ERROR - This is an error message
+2026-02-06 15:18:12,399 - CRITICAL - This is a critical message
+2026-02-06 15:20:06,991 - DEBUG - This is a debug message
+2026-02-06 15:20:06,992 - INFO - This is an info message
+2026-02-06 15:20:06,992 - WARNING - This is a warning message
+2026-02-06 15:20:06,993 - ERROR - This is an error message
+2026-02-06 15:20:06,994 - CRITICAL - This is a critical message
+2026-02-06 15:20:07,043 - INFO - the code has begun
+2026-02-06 15:20:44,914 - DEBUG - This is a debug message
+2026-02-06 15:20:44,914 - INFO - This is an info message
+2026-02-06 15:20:44,916 - WARNING - This is a warning message
+2026-02-06 15:20:44,916 - ERROR - This is an error message
+2026-02-06 15:20:44,917 - CRITICAL - This is a critical message
+2026-02-06 15:20:44,928 - INFO - the code has begun
+2026-02-06 18:31:38,270 - DEBUG - This is a debug message
+2026-02-06 18:31:38,272 - INFO - This is an info message
+2026-02-06 18:31:38,273 - WARNING - This is a warning message
+2026-02-06 18:31:38,273 - ERROR - This is an error message
+2026-02-06 18:31:38,274 - CRITICAL - This is a critical message
+2026-02-06 18:31:38,308 - INFO - the code has begun
+2026-02-06 18:33:11,190 - DEBUG - This is a debug message
+2026-02-06 18:33:11,191 - INFO - This is an info message
+2026-02-06 18:33:11,191 - WARNING - This is a warning message
+2026-02-06 18:33:11,192 - ERROR - This is an error message
+2026-02-06 18:33:11,192 - CRITICAL - This is a critical message
+2026-02-06 18:33:11,214 - INFO - the code has begun
+2026-02-06 18:34:26,301 - DEBUG - This is a debug message
+2026-02-06 18:34:26,302 - INFO - This is an info message
+2026-02-06 18:34:26,303 - WARNING - This is a warning message
+2026-02-06 18:34:26,304 - ERROR - This is an error message
+2026-02-06 18:34:26,305 - CRITICAL - This is a critical message
+2026-02-06 18:34:26,329 - INFO - the code has begun
+2026-02-06 18:34:26,334 - INFO - Customer 1 is a low value customer
+2026-02-06 18:34:26,335 - WARNING - Customer 2 is a high value customer
+2026-02-06 18:34:26,336 - INFO - Customer 3 is a low value customer
+2026-02-06 18:34:26,337 - INFO - Customer 4 is a low value customer
+2026-02-06 18:34:26,338 - WARNING - Customer 5 is a high value customer
+2026-02-06 18:34:26,338 - INFO - Customer 6 is a low value customer
+2026-02-06 18:34:26,339 - INFO - the code has ended
+2026-02-06 18:34:33,254 - DEBUG - This is a debug message
+2026-02-06 18:34:33,254 - INFO - This is an info message
+2026-02-06 18:34:33,255 - WARNING - This is a warning message
+2026-02-06 18:34:33,255 - ERROR - This is an error message
+2026-02-06 18:34:33,256 - CRITICAL - This is a critical message
+2026-02-06 18:34:33,265 - INFO - the code has begun
+2026-02-06 18:34:33,267 - INFO - Customer 1 is a low value customer
+2026-02-06 18:34:33,267 - WARNING - Customer 2 is a high value customer
+2026-02-06 18:34:33,268 - INFO - Customer 3 is a low value customer
+2026-02-06 18:34:33,269 - INFO - Customer 4 is a low value customer
+2026-02-06 18:34:33,270 - WARNING - Customer 5 is a high value customer
+2026-02-06 18:34:33,270 - INFO - Customer 6 is a low value customer
+2026-02-06 18:34:33,271 - INFO - the code has ended
+2026-02-06 18:35:48,604 - DEBUG - This is a debug message
+2026-02-06 18:35:48,604 - INFO - This is an info message
+2026-02-06 18:35:48,605 - WARNING - This is a warning message
+2026-02-06 18:35:48,605 - ERROR - This is an error message
+2026-02-06 18:35:48,606 - CRITICAL - This is a critical message
+2026-02-06 18:35:48,626 - INFO - the code has begun
+2026-02-06 18:35:48,630 - INFO - Customer 1 is a low value customer
+2026-02-06 18:35:48,631 - WARNING - Customer 2 is a high value customer
+2026-02-06 18:35:48,631 - INFO - Customer 3 is a low value customer
+2026-02-06 18:35:48,632 - INFO - Customer 4 is a low value customer
+2026-02-06 18:35:48,632 - WARNING - Customer 5 is a high value customer
+2026-02-06 18:35:48,633 - INFO - Customer 6 is a low value customer
+2026-02-06 18:35:48,633 - INFO - the code has ended
+2026-02-06 18:36:12,759 - DEBUG - This is a debug message
+2026-02-06 18:36:12,760 - INFO - This is an info message
+2026-02-06 18:36:12,761 - WARNING - This is a warning message
+2026-02-06 18:36:12,761 - ERROR - This is an error message
+2026-02-06 18:36:12,761 - CRITICAL - This is a critical message
+2026-02-06 18:36:12,772 - INFO - the code has begun
+2026-02-06 18:36:12,774 - INFO - Customer 1 is a low value customer
+2026-02-06 18:36:12,775 - WARNING - Customer 2 is a high value customer
+2026-02-06 18:36:12,775 - INFO - Customer 3 is a low value customer
+2026-02-06 18:36:12,776 - INFO - Customer 4 is a low value customer
+2026-02-06 18:36:12,777 - WARNING - Customer 5 is a high value customer
+2026-02-06 18:36:12,778 - INFO - Customer 6 is a low value customer
+2026-02-06 18:36:12,778 - INFO - the code has ended
+2026-02-06 18:36:33,240 - DEBUG - This is a debug message
+2026-02-06 18:36:33,241 - INFO - This is an info message
+2026-02-06 18:36:33,241 - WARNING - This is a warning message
+2026-02-06 18:36:33,241 - ERROR - This is an error message
+2026-02-06 18:36:33,242 - CRITICAL - This is a critical message
+2026-02-06 18:36:33,251 - INFO - the code has begun
+2026-02-06 18:36:33,252 - INFO - Customer 1 is a low value customer
+2026-02-06 18:36:33,253 - WARNING - Customer 2 is a high value customer
+2026-02-06 18:36:33,254 - INFO - Customer 3 is a low value customer
+2026-02-06 18:36:33,255 - INFO - Customer 4 is a low value customer
+2026-02-06 18:36:33,256 - WARNING - Customer 5 is a high value customer
+2026-02-06 18:36:33,257 - INFO - Customer 6 is a low value customer
+2026-02-06 18:36:33,257 - INFO - the code has ended
+2026-02-06 18:38:24,750 - DEBUG - This is a debug message
+2026-02-06 18:38:24,751 - INFO - This is an info message
+2026-02-06 18:38:24,751 - WARNING - This is a warning message
+2026-02-06 18:38:24,752 - ERROR - This is an error message
+2026-02-06 18:38:24,752 - CRITICAL - This is a critical message
+2026-02-06 18:38:24,776 - INFO - the code has begun
+2026-02-06 18:38:24,782 - INFO - Customer 1 is a low value customer
+2026-02-06 18:38:24,783 - WARNING - Customer 2 is a high value customer
+2026-02-06 18:38:24,784 - INFO - Customer 3 is a low value customer
+2026-02-06 18:38:24,785 - INFO - Customer 4 is a low value customer
+2026-02-06 18:38:24,786 - WARNING - Customer 5 is a high value customer
+2026-02-06 18:38:24,786 - INFO - Customer 6 is a low value customer
+2026-02-06 18:38:24,787 - INFO - the code has ended
+2026-02-06 20:52:05,406 - DEBUG - This is a debug message
+2026-02-06 20:52:05,407 - INFO - This is an info message
+2026-02-06 20:52:05,408 - WARNING - This is a warning message
+2026-02-06 20:52:05,409 - ERROR - This is an error message
+2026-02-06 20:52:05,410 - CRITICAL - This is a critical message
+2026-02-06 20:52:05,421 - INFO - the code has begun
+2026-02-06 20:52:05,423 - INFO - Customer 1 is a low value customer
+2026-02-06 20:52:05,424 - WARNING - Customer 2 is a high value customer
+2026-02-06 20:52:05,425 - INFO - Customer 3 is a low value customer
+2026-02-06 20:52:05,426 - INFO - Customer 4 is a low value customer
+2026-02-06 20:52:05,426 - WARNING - Customer 5 is a high value customer
+2026-02-06 20:52:05,426 - INFO - Customer 6 is a low value customer
+2026-02-06 20:52:05,427 - INFO - the code has ended
