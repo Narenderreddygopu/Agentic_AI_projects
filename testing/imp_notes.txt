@@ -1,0 +1,415 @@
+"""
+COMPLETE LOGGING TUTORIAL
+=========================
+Understanding Python's logging module from basics to advanced
+"""
+
+import logging
+import sys
+
+print("=" * 80)
+print("PYTHON LOGGING - COMPLETE GUIDE")
+print("=" * 80)
+
+# ============================================================================
+# PART 1: WHY USE LOGGING?
+# ============================================================================
+print("\n" + "=" * 80)
+print("PART 1: WHY LOGGING? (vs print)")
+print("=" * 80)
+
+print("\nUsing print():")
+print("Temperature: 25.5°C")
+print("Status: OK")
+
+print("\nUsing logging:")
+logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(message)s')
+logging.info("Temperature: 25.5°C")
+logging.info("Status: OK")
+
+print("\n📝 KEY DIFFERENCES:")
+print("""
+┌─────────────────┬─────────────────────────────────────────────────────┐
+│ Feature         │ print()         vs         logging                  │
+├─────────────────┼─────────────────────────────────────────────────────┤
+│ Timestamps      │ ❌ No                      ✅ Automatic              │
+│ Log Levels      │ ❌ No (everything prints) ✅ DEBUG/INFO/WARNING/etc  │
+│ Save to File    │ ❌ Hard to do              ✅ Built-in               │
+│ Turn On/Off     │ ❌ Must delete code        ✅ Just change level      │
+│ Professional    │ ❌ For learning only       ✅ For production code    │
+└─────────────────┴─────────────────────────────────────────────────────┘
+""")
+
+# ============================================================================
+# PART 2: LOG LEVELS (Most Important Concept!)
+# ============================================================================
+print("\n" + "=" * 80)
+print("PART 2: LOG LEVELS - The Core Concept")
+print("=" * 80)
+
+# Reset logging for clean examples
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
+
+print("\n🎯 THERE ARE 5 LOG LEVELS (from least to most severe):\n")
+print("1. DEBUG    - Detailed info for diagnosing problems")
+print("2. INFO     - General informational messages")
+print("3. WARNING  - Something unexpected but program continues")
+print("4. ERROR    - Serious problem, function failed")
+print("5. CRITICAL - Very serious, program may crash\n")
+
+# Setup logger with INFO level
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(levelname)-8s - %(message)s'
+)
+
+print("Example with level set to INFO:")
+print("-" * 60)
+logging.debug("This is DEBUG - you WON'T see this (below INFO)")
+logging.info("This is INFO - you WILL see this")
+logging.warning("This is WARNING - you WILL see this")
+logging.error("This is ERROR - you WILL see this")
+logging.critical("This is CRITICAL - you WILL see this")
+
+print("\n💡 RULE: You only see messages at or ABOVE your set level")
+print("   Level set to INFO → See: INFO, WARNING, ERROR, CRITICAL")
+print("   Level set to WARNING → See: WARNING, ERROR, CRITICAL")
+
+# ============================================================================
+# PART 3: BASIC SETUP - basicConfig()
+# ============================================================================
+print("\n" + "=" * 80)
+print("PART 3: BASIC SETUP - The Easy Way")
+print("=" * 80)
+
+# Clear previous handlers
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
+
+print("\n📌 METHOD 1: Simple Setup")
+print("-" * 60)
+print("Code:")
+print("""
+logging.basicConfig(level=logging.INFO)
+logging.info("Hello World")
+""")
+
+logging.basicConfig(level=logging.INFO)
+logging.info("Hello World")
+
+# Clear handlers again
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
+
+print("\n📌 METHOD 2: With Custom Format")
+print("-" * 60)
+print("Code:")
+print("""
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logging.info("Started processing")
+""")
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+logging.info("Started processing")
+
+# ============================================================================
+# PART 4: FORMAT STRINGS - Customize Your Output
+# ============================================================================
+print("\n" + "=" * 80)
+print("PART 4: FORMAT STRINGS - Customize Output")
+print("=" * 80)
+
+print("\n🎨 COMMON FORMAT PLACEHOLDERS:\n")
+print("%(asctime)s      - Timestamp (2024-02-11 10:30:45)")
+print("%(levelname)s    - Log level (INFO, WARNING, etc)")
+print("%(message)s      - Your actual message")
+print("%(filename)s     - File name")
+print("%(lineno)d       - Line number")
+print("%(funcName)s     - Function name")
+print("%(name)s         - Logger name")
+
+# Clear handlers
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
+
+print("\n📌 EXAMPLE: Detailed Format")
+print("-" * 60)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s | %(levelname)-8s | Line %(lineno)d | %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+logging.info("This shows timestamp, level, line number, and message")
+
+# ============================================================================
+# PART 5: CREATING A LOGGER OBJECT (Professional Way)
+# ============================================================================
+print("\n" + "=" * 80)
+print("PART 5: LOGGER OBJECTS - The Professional Way")
+print("=" * 80)
+
+print("\n🏆 Instead of using logging.info() directly, create a logger:\n")
+
+print("Code:")
+print("""
+logger = logging.getLogger(__name__)
+logger.info("Using a logger object")
+""")
+
+# Create a logger
+logger = logging.getLogger(__name__)
+logger.info("Using a logger object")
+
+print("\n💡 WHY USE logger = logging.getLogger(__name__)?")
+print("   - Better control over different parts of your code")
+print("   - Can have different loggers for different modules")
+print("   - __name__ gives it the module name automatically")
+
+# ============================================================================
+# PART 6: F-STRINGS IN LOGGING
+# ============================================================================
+print("\n" + "=" * 80)
+print("PART 6: F-STRINGS IN LOGGING - Your Question!")
+print("=" * 80)
+
+print("\n📊 Let's break down your example:\n")
+
+# Sample data
+Q1 = 50000
+Q3 = 75000
+IQR = Q3 - Q1
+outlier_count = 5
+
+print("Code:")
+print('''
+logger.info(f"Outliers detected: {outlier_count}")
+logger.info(f"  Q1: ${Q1:,.2f}")
+logger.info(f"  Q3: ${Q3:,.2f}")
+logger.info(f"  IQR: ${IQR:,.2f}")
+logger.info(f"  Lower bound: ${Q1 - 1.5*IQR:,.2f}")
+logger.info(f"  Upper bound: ${Q3 + 1.5*IQR:,.2f}")
+''')
+
+print("\nOutput:")
+print("-" * 60)
+logger.info(f"Outliers detected: {outlier_count}")
+logger.info(f"  Q1: ${Q1:,.2f}")
+logger.info(f"  Q3: ${Q3:,.2f}")
+logger.info(f"  IQR: ${IQR:,.2f}")
+logger.info(f"  Lower bound: ${Q1 - 1.5*IQR:,.2f}")
+logger.info(f"  Upper bound: ${Q3 + 1.5*IQR:,.2f}")
+
+print("\n🔍 BREAKING DOWN THE F-STRING FORMAT:\n")
+print("f\"...\"               - F-string (allows {variables} inside)")
+print("{outlier_count}      - Just insert the variable")
+print("{Q1:,.2f}           - Format the number:")
+print("  ':'              - Start formatting")
+print("  ','              - Add comma thousands separator")
+print("  '.2f'            - 2 decimal places, float")
+print("{Q1 - 1.5*IQR:,.2f} - Can do calculations inside!")
+
+print("\n📝 FORMAT EXAMPLES:")
+examples = [
+    ("Regular", "{x}", 1234.5678, "1234.5678"),
+    ("2 decimals", "{x:.2f}", 1234.5678, "1234.57"),
+    ("Comma separator", "{x:,}", 1234567, "1,234,567"),
+    ("Both", "{x:,.2f}", 1234.5678, "1,234.57"),
+    ("Percentage", "{x:.1%}", 0.856, "85.6%"),
+    ("Padding", "{x:10}", "Hi", "Hi        "),
+    ("Right align", "{x:>10}", "Hi", "        Hi"),
+]
+
+print("\n┌─────────────────┬──────────────┬────────────┬──────────────┐")
+print("│ Description     │ Format       │ Input      │ Output       │")
+print("├─────────────────┼──────────────┼────────────┼──────────────┤")
+for desc, fmt, inp, out in examples:
+    print(f"│ {desc:15} │ {fmt:12} │ {str(inp):10} │ {out:12} │")
+print("└─────────────────┴──────────────┴────────────┴──────────────┘")
+
+# ============================================================================
+# PART 7: PRACTICAL EXAMPLE - Complete ML Script with Logging
+# ============================================================================
+print("\n" + "=" * 80)
+print("PART 7: PRACTICAL EXAMPLE - ML Script with Logging")
+print("=" * 80)
+
+# Clear handlers
+for handler in logging.root.handlers[:]:
+    logging.root.removeHandler(handler)
+
+# Setup comprehensive logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    datefmt='%Y-%m-%d %H:%M:%S'
+)
+
+logger = logging.getLogger("ML_Pipeline")
+
+print("\nSimulating a Machine Learning Pipeline:")
+print("-" * 60)
+
+# Simulate ML pipeline
+logger.info("=" * 50)
+logger.info("Starting ML Pipeline")
+logger.info("=" * 50)
+
+# Data loading
+logger.info("Loading dataset...")
+rows, cols = 1000, 10
+logger.info(f"Dataset loaded: {rows:,} rows, {cols} columns")
+
+# Data cleaning
+logger.info("Cleaning data...")
+missing_before = 45
+missing_after = 0
+logger.info(f"Missing values: {missing_before} → {missing_after}")
+
+# Feature engineering
+logger.warning("Low correlation detected for feature 'age' (r=0.12)")
+logger.info("Created 5 new features")
+
+# Model training
+logger.info("Training model...")
+accuracy = 0.8567
+logger.info(f"Training accuracy: {accuracy:.2%}")
+
+# Validation
+val_accuracy = 0.8234
+logger.info(f"Validation accuracy: {val_accuracy:.2%}")
+
+if val_accuracy < accuracy - 0.05:
+    logger.warning("⚠ Potential overfitting detected!")
+    logger.warning(f"  Gap: {(accuracy - val_accuracy):.2%}")
+
+# Error example
+try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    logger.error(f"Math error occurred: {e}")
+    logger.error("Using default value instead")
+
+# Success
+logger.info("=" * 50)
+logger.info("✅ Pipeline completed successfully!")
+logger.info("=" * 50)
+
+# ============================================================================
+# PART 8: LOGGING TO FILE
+# ============================================================================
+print("\n" + "=" * 80)
+print("PART 8: LOGGING TO FILE (Save Your Logs!)")
+print("=" * 80)
+
+print("\nTo save logs to a file, add 'filename' to basicConfig:\n")
+print("Code:")
+print("""
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename='app.log',  # ← Saves to file!
+    filemode='w'         # 'w' = overwrite, 'a' = append
+)
+""")
+
+# Create a file logger example
+file_logger = logging.getLogger("FileExample")
+file_logger.setLevel(logging.INFO)
+
+# File handler
+file_handler = logging.FileHandler('example_log.txt', mode='w')
+file_handler.setFormatter(
+    logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+)
+file_logger.addHandler(file_handler)
+
+file_logger.info("This message goes to example_log.txt")
+file_logger.info("You won't see this in console!")
+
+print("\n✓ Created 'example_log.txt' with log messages")
+
+# ============================================================================
+# PART 9: BEST PRACTICES
+# ============================================================================
+print("\n" + "=" * 80)
+print("PART 9: LOGGING BEST PRACTICES")
+print("=" * 80)
+
+print("""
+✅ DO's:
+  1. Use logger.info() for normal flow
+  2. Use logger.warning() for unexpected but recoverable issues
+  3. Use logger.error() for actual errors
+  4. Use f-strings for formatting: logger.info(f"Value: {x}")
+  5. Create logger at module level: logger = logging.getLogger(__name__)
+  6. Include useful context in messages
+
+❌ DON'Ts:
+  1. Don't use print() in production code
+  2. Don't log sensitive data (passwords, API keys)
+  3. Don't log inside tight loops (performance!)
+  4. Don't use logger.exception() outside except blocks
+  5. Don't set level to DEBUG in production
+
+📋 WHEN TO USE EACH LEVEL:
+
+DEBUG    → Detailed diagnostic info (variable values, function calls)
+INFO     → Normal program flow, milestones, successful operations
+WARNING  → Unexpected situation but program continues (deprecated functions, low disk space)
+ERROR    → Error occurred, function failed but program continues
+CRITICAL → Serious error, program may need to stop
+""")
+
+# ============================================================================
+# PART 10: QUICK REFERENCE
+# ============================================================================
+print("\n" + "=" * 80)
+print("PART 10: QUICK REFERENCE CHEAT SHEET")
+print("=" * 80)
+
+print("""
+┌─────────────────────────────────────────────────────────────────────────┐
+│ BASIC SETUP                                                             │
+├─────────────────────────────────────────────────────────────────────────┤
+│ import logging                                                          │
+│ logging.basicConfig(                                                    │
+│     level=logging.INFO,                                                 │
+│     format='%(asctime)s - %(levelname)s - %(message)s'                  │
+│ )                                                                       │
+│ logger = logging.getLogger(__name__)                                    │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ COMMON USAGE                                                            │
+├─────────────────────────────────────────────────────────────────────────┤
+│ logger.debug("Detailed debug info")                                    │
+│ logger.info(f"Processing file: {filename}")                            │
+│ logger.warning(f"Low memory: {mem_available}MB")                       │
+│ logger.error(f"Failed to connect: {error}")                            │
+│ logger.critical("Database connection lost!")                           │
+└─────────────────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────────────────┐
+│ FORMAT STRINGS                                                          │
+├─────────────────────────────────────────────────────────────────────────┤
+│ {x}           - Simple variable                                         │
+│ {x:.2f}       - 2 decimal places                                        │
+│ {x:,.2f}      - Comma separator + 2 decimals                            │
+│ {x:.2%}       - Percentage                                              │
+│ {x:10}        - Pad to 10 characters                                    │
+│ {x:>10}       - Right align in 10 chars                                 │
+└─────────────────────────────────────────────────────────────────────────┘
+""")
+
+print("\n" + "=" * 80)
+print("✅ END OF LOGGING TUTORIAL")
+print("=" * 80)
+print("\nNow you understand logging completely!")
+print("Use it in your ML projects for professional-grade code!")
