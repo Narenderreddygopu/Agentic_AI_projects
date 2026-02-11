@@ -27,6 +27,7 @@ logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(message)s')
 logging.info("Temperature: 25.5°C")
 logging.info("Status: OK")
 
+
 print("\n📝 KEY DIFFERENCES:")
 print("""
 ┌─────────────────┬─────────────────────────────────────────────────────┐
