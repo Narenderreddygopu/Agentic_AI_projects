@@ -1,0 +1,42 @@
+Employee_ID,Name,Age,Department,Salary,Join_Date,Performance_Score,Email,Phone,Years_Experience,Education,City
+E001,John Smith,28,Sales,45000,2020-01-15,8.5,john.smith@company.com,555-0101,3,Bachelor,New York
+E002,Sarah Johnson,35,Marketing,62000,2018-06-22,9.2,sarah.j@company.com,555-0102,7,Master,Los Angeles
+E003,Mike Davis,NULL,IT,75000,2019-03-10,7.8,mike.davis@company.com,555-0103,5,Bachelor,Chicago
+E004,Emily Wilson,42,HR,58000,2017-11-05,8.9,emily.w@company.com,,10,Master,New York
+E005,Robert Brown,29,Sales,48000,invalid_date,6.5,robert.brown@company.com,555-0105,4,bachelor,Houston
+E006,Lisa Anderson,31,IT,NULL,2021-02-18,9.0,lisa.a@company.com,555-0106,6,Bachelor,San Francisco
+E007,David Martinez,38,Marketing,65000,2016-09-30,NULL,david.m@company.com,5550107,12,PhD,Boston
+E008,,27,Sales,50000,2022-05-12,7.2,unknown@company.com,555-0108,2,Bachelor,Seattle
+E009,Jennifer Taylor,45,HR,999999,2015-12-01,8.7,jennifer.t@company.com,555-0109,15,Master,Miami
+E010,James Anderson,26,IT,52000,2023-01-20,8.1,james.a@company.com,555-0110,1,Bachelor,Denver
+E011,Patricia Thomas,33,Sales,-5000,2019-07-15,9.5,patricia.t@company.com,555-0111,8,Master,Portland
+E012,Michael Jackson,52,Marketing,70000,2014-04-03,6.8,michael.j@company.com,555-0112,18,Bachelor,Austin
+E013,Linda White,29,IT,55000,2021-08-25,NULL,linda.w@company.com,,3,Bachelor,Dallas
+E014,William Harris,NULL,HR,60000,2018-10-17,7.9,william.h@company.com,555-0114,9,master,Phoenix
+E015,Barbara Martin,36,Sales,47000,2020-03-08,8.3,barbara.m@company.com,555-0115,5,Bachelor,Philadelphia
+E016,Richard Thompson,41,IT,78000,2017-02-14,9.8,richard.t@company.com,555-0116,13,PhD,San Diego
+E017,Susan Garcia,30,Marketing,NULL,2022-11-22,7.6,susan.g@company.com,5550117,4,Bachelor,San Jose
+E018,Joseph Martinez,34,Sales,51000,2019-06-05,8.4,,555-0118,6,Master,Jacksonville
+E019,Jessica Robinson,28,HR,56000,2021-04-30,NULL,jessica.r@company.com,555-0119,3,Bachelor,Columbus
+E020,Thomas Clark,39,IT,72000,bad_date,9.1,thomas.c@company.com,555-0120,11,Master,Indianapolis
+E021,Nancy Rodriguez,NULL,Marketing,64000,2018-12-12,7.3,nancy.r@company.com,555-0121,8,Bachelor,Charlotte
+E022,Charles Lewis,27,Sales,46000,2023-02-28,8.0,charles.l@company.com,,2,bachelor,Detroit
+E023,Karen Lee,44,IT,76000,2016-05-19,9.4,karen.l@company.com,555-0123,14,PhD,San Francisco
+E024,Daniel Walker,32,HR,59000,2020-09-07,7.7,daniel.w@company.com,555-0124,7,Master,New York
+E025,Betty Hall,37,Marketing,67000,2017-07-23,8.6,betty.h@company.com,5550125,10,Bachelor,Los Angeles
+E026,,29,Sales,NULL,2022-01-10,6.9,missing@company.com,555-0126,3,Bachelor,Chicago
+E027,Mark Allen,31,IT,54000,2021-03-15,NULL,mark.a@company.com,555-0127,5,Master,Houston
+E028,Helen Young,43,Marketing,68000,2015-08-28,8.8,helen.y@company.com,555-0128,16,Bachelor,Boston
+E029,Steven King,26,Sales,44000,invalid,7.4,steven.k@company.com,,1,Bachelor,Seattle
+E030,Donna Scott,35,HR,61000,2019-11-03,9.0,donna.s@company.com,555-0130,9,master,Miami
+E031,Paul Green,NULL,IT,73000,2018-02-21,7.5,paul.g@company.com,555-0131,10,PhD,Denver
+E032,Carol Adams,30,Marketing,63000,2021-06-14,8.2,carol.a@company.com,5550132,5,Bachelor,Portland
+E033,George Baker,40,Sales,49000,2017-10-09,NULL,george.b@company.com,555-0133,12,Master,Austin
+E034,Sandra Nelson,28,IT,56000,2022-04-25,7.8,sandra.n@company.com,555-0134,3,Bachelor,Dallas
+E035,Kenneth Carter,36,HR,58000,bad_date,8.5,kenneth.c@company.com,,8,Bachelor,Phoenix
+E001,John Smith,28,Sales,45000,2020-01-15,8.5,john.smith@company.com,555-0101,3,Bachelor,New York
+E036,Dorothy Mitchell,33,Marketing,66000,2019-05-17,9.3,dorothy.m@company.com,555-0136,7,Master,Philadelphia
+E037,,27,Sales,NULL,2023-03-20,6.7,unknown2@company.com,555-0137,2,bachelor,San Diego
+E038,Brian Perez,45,IT,77000,2016-01-08,8.9,brian.p@company.com,555-0138,15,PhD,San Jose
+E039,Ruth Roberts,31,Marketing,64000,2020-07-12,7.9,ruth.r@company.com,5550139,6,Bachelor,Jacksonville
+E040,Edward Turner,29,Sales,47000,2022-09-05,NULL,edward.t@company.com,555-0140,4,Master,Columbus
