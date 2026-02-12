@@ -286,7 +286,7 @@ axes[0, 2].scatter(X_log[y_log==0, 0], X_log[y_log==0, 1], color='red', label='F
 axes[0, 2].scatter(X_log[y_log==1, 0], X_log[y_log==1, 1], color='green', label='Pass', alpha=0.6)
 axes[0, 2].set_title('3. Logistic Regression')
 axes[0, 2].set_xlabel('Study Hours')
-axes[0, 2].set_ylabel('Previous Score')
+axes[0, 2].set_ylabel('Previous Score')4r
 axes[0, 2].legend()
 
 # 4. Decision Tree
