@@ -50,14 +50,19 @@ SELECT c.country,
 FROM customers c
 JOIN orders o
   ON c.customer_id = o.customer_id
-WHERE o.amount > 100
+WHERE o.amount > 100 
 GROUP BY c.country
-HAVING COUNT(o.order_id) > 1
-ORDER BY total_amount DESC
+
 """)
 
+#GROUP BY c.country
+#HAVING COUNT(o.order_id) > 1
+#ORDER BY total_amount DESC
+
+
 # Print ONLY ONE (choose one)
-#result_sql.show()
+#
+result_sql.show()
 result_df.show()   # <- uncomment this and comment result_sql.show() if you want DF output instead
 
 spark.stop()

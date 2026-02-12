@@ -286,7 +286,7 @@ axes[0, 2].scatter(X_log[y_log==0, 0], X_log[y_log==0, 1], color='red', label='F
 axes[0, 2].scatter(X_log[y_log==1, 0], X_log[y_log==1, 1], color='green', label='Pass', alpha=0.6)
 axes[0, 2].set_title('3. Logistic Regression')
 axes[0, 2].set_xlabel('Study Hours')
-axes[0, 2].set_ylabel('Previous Score')4r
+axes[0, 2].set_ylabel('Previous Score')
 axes[0, 2].legend()
 
 # 4. Decision Tree
@@ -324,7 +324,7 @@ axes[1, 2].set_ylabel('Color Intensity')
 axes[1, 2].legend()
 
 plt.tight_layout()
-plt.savefig('/home/claude/ml_algorithms_comparison.png', dpi=300, bbox_inches='tight')
+plt.savefig('/mnt/c/Users/gopur/OneDrive/Documents/Agentic_ai/ML/ml_algorithm_comparison.png', dpi=300, bbox_inches='tight')
 print("\n✓ Visualization saved as 'ml_algorithms_comparison.png'")
 
 # ============================================================================
