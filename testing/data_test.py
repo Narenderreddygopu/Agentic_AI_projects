@@ -1,7 +1,7 @@
 """
+==================================
 DATA CLEANING WITH PROPER LOGGING
 ==================================
-Fixed version with all corrections and best practices
 """
 
 import logging
@@ -28,7 +28,7 @@ file_path = "/mnt/c/Users/gopur/OneDrive/Documents/Agentic_ai/testing/employee_d
 
 try:
     df = pd.read_csv(file_path)
-    logger.info(f"✓ Data loaded successfully: {df.shape[0]} rows, {df.shape[1]} columns")
+    logger.info(f"Data loaded successfully:- {df.shape[0]} rows, {df.shape[1]} columns")
 except FileNotFoundError:
     logger.error(f"❌ File not found: {file_path}")
     exit()
