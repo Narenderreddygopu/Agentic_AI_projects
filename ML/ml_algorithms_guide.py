@@ -1,6 +1,103 @@
 """
 Machine Learning Algorithms - Complete Guide
 From Linear Regression to Advanced Techniques
+MACHINE LEARNING ALGORITHMS SIMPLE NOTES
+
+LINEAR REGRESSION
+===================
+Purpose: Predict numbers (price, salary, temperature)
+Model: straight line relationship
+Learns: best fitting line between X and Y
+Bias: High
+Variance: Low
+Good: Fast and interpretable
+Bad: Cannot learn curves, sensitive to outliers
+Use: When relation is linear
+
+LOGISTIC REGRESSION
+====================
+Purpose: Predict category (Yes/No, 0/1)
+Model: probability output
+Learns: decision boundary between classes
+Bias: High
+Variance: Low
+Good: Stable and explainable
+Bad: Only linear separation
+Use: Baseline classifier
+
+K NEAREST NEIGHBORS (KNN)
+=========================
+Purpose: Classify using nearby points
+Model: distance based
+Learns: stores training data only
+Bias: Low
+Variance: High
+Good: Simple and nonlinear
+Bad: Slow prediction, bad for large data
+Use: Small datasets
+
+DECISION TREE
+================
+Purpose: Rule based prediction
+Model: If-else conditions
+Learns: splits data into groups
+Bias: Low
+Variance: High (overfits)
+Good: Easy to understand
+Bad: Overfitting problem
+Use: When rules matter
+
+RANDOM FOREST
+===============
+Purpose: Many trees voting together
+Model: ensemble of decision trees
+Learns: average prediction of trees
+Bias: Low
+Variance: Low
+Good: Strong default model
+Bad: Less interpretable
+Use: Best first try for tabular data
+
+SUPPORT VECTOR MACHINE (SVM)
+==============================
+Purpose: Separate classes with maximum margin
+Model: boundary using support points
+Learns: optimal separating line
+Bias: Medium
+Variance: Low
+Good: Works in high dimensions
+Bad: Slow for big data
+Use: Medium datasets
+
+NAIVE BAYES
+===============
+Purpose: Probability based classification
+Model: assumes features independent
+Learns: likelihood of class
+Bias: Very High
+Variance: Very Low
+Good: Very fast
+Bad: Unrealistic assumptions
+Use: Text classification, spam detection
+
+GRADIENT BOOSTING (XGBOOST LIGHTGBM)
+=========================================
+Purpose: Correct previous mistakes step by step
+Model: sequence of small trees
+Learns: residual errors
+Bias: Very Low
+Variance: Medium
+Good: Best for structured data
+Bad: Many parameters
+Use: Competitions and real tabular problems
+
+K MEANS CLUSTERING
+===================
+Purpose: Group similar data
+Model: clusters around centers
+Learns: centroids
+Bad: Need number of clusters
+Use: Unsupervised grouping
 """
 
 import numpy as np
@@ -286,7 +383,7 @@ axes[0, 2].scatter(X_log[y_log==0, 0], X_log[y_log==0, 1], color='red', label='F
 axes[0, 2].scatter(X_log[y_log==1, 0], X_log[y_log==1, 1], color='green', label='Pass', alpha=0.6)
 axes[0, 2].set_title('3. Logistic Regression')
 axes[0, 2].set_xlabel('Study Hours')
-axes[0, 2].set_ylabel('Previous Score')4r
+axes[0, 2].set_ylabel('Previous Score')
 axes[0, 2].legend()
 
 # 4. Decision Tree
@@ -324,7 +421,7 @@ axes[1, 2].set_ylabel('Color Intensity')
 axes[1, 2].legend()
 
 plt.tight_layout()
-plt.savefig('/home/claude/ml_algorithms_comparison.png', dpi=300, bbox_inches='tight')
+plt.savefig('/mnt/c/Users/gopur/OneDrive/Documents/Agentic_ai/ML/ml                     _algorithm_comparison.png', dpi=300, bbox_inches='tight')
 print("\n✓ Visualization saved as 'ml_algorithms_comparison.png'")
 
 # ============================================================================
