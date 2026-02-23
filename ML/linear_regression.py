@@ -46,6 +46,7 @@ print("Actual values (Y_test): ", Y_test)
 
 # 6. Evaluate the model
 # confusion matrix is used for classification problems, but since this is a regression problem, we will use mean squared error to evaluate the performance of the model.
+
 mse = mean_squared_error(Y_test, Y_pred)
 print("Mean Squared Error: ", mse)
 

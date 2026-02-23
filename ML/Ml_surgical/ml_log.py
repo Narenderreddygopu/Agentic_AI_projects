@@ -47,7 +47,8 @@ plt.show()
 
 
 # ============================================================
-# 2) SUPERVISED - CLASSIFICATION: LOGISTIC REGRESSION (WITH GRAPHS)
+# 2) SUPERVISED - CLASSIFICATION: L
+# OGISTIC REGRESSION (WITH GRAPHS)
 # ============================================================
 # Toy feature: length_cm
 X_clf = np.array([30, 40, 150, 160, 120, 15, 25, 20, 90, 10]).reshape(-1, 1)

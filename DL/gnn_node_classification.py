@@ -47,4 +47,4 @@ for _ in range(200):
 model.eval()
 pred = model(data).argmax(dim=1)
 acc = (pred[data.train_mask] == data.y[data.train_mask]).float().mean().item()
-print("GNN train accuracy:", round(acc, 4))
+print("GNN train accuracy:", round(acc, 4))cd

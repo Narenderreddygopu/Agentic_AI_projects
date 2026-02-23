@@ -123,7 +123,8 @@ plt.grid(True)
 plt.show()
 
 # ================================================================
-#   6. DECISION TREE — THE ACTUAL TREE STRUCTURE
+#   6. DECISION TREE — THE ACTUAL TREE 
+
 # ================================================================
 dt = DecisionTreeClassifier(max_depth=4).fit(X_scaled, y_clf)
 
