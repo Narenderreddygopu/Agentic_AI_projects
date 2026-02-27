@@ -106,7 +106,7 @@ for epoch in range(epochs):
   #b2 = b2 + np.sum(d_hidden,axis = 0,keepdims = True)*learning_rate
   b2 = b2 + np.sum( d_output, axis=0, keepdims=True) * learning_rate
 
-  if epoch%100 == 0:
+  if epoch%100 == 0:  #prints every 100 epochs
     print(f"Epoch is  {epoch}, Loss is : {loss}, Predicted Output is : {predicted_output}, Error is : {error}, Weights are : {w1}, {w2}, Biases are : {b1}, {b2} , Learning Rate is : {learning_rate}")
 
-print("final predictions",predicted_output)
+print("final predictions",predicted_output) 
