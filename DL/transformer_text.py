@@ -16,19 +16,22 @@ texts = [
 ]
 labels = [1,1,0,0,1,0]  # 1=positive, 0=negative
 
+#build vocabulary and encode texts
 def build_vocab(texts):
     words = sorted(set(" ".join(texts).split()))
     stoi = {w:i+2 for i,w in enumerate(words)}  # 0=pad, 1=unk
     stoi["<pad>"] = 0
     stoi["<unk>"] = 1
     return stoi
-
+#build vocabulary and encode texts
 def encode(text, stoi, max_len=6):
     toks = text.split()
     ids = [stoi.get(t, 1) for t in toks][:max_len]
     ids += [0]*(max_len-len(ids))
     return ids
 
+
+#Transformer model
 class TinyTransformer(nn.Module):
     def __init__(self, vocab_size, d_model=64, nhead=4, num_layers=2, max_len=6):
         super().__init__()
@@ -44,7 +47,7 @@ class TinyTransformer(nn.Module):
         h = self.encoder(h)              # [B, T, D]
         pooled = h.mean(dim=1)           # simple pooling
         return self.fc(pooled)
-
+#train and evaluate
 def main():
     device = "cuda" if torch.cuda.is_available() else "cpu"
     stoi = build_vocab(texts)
