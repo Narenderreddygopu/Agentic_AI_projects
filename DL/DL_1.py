@@ -49,7 +49,9 @@ XOR Gate
 
 # activation function = sigmoid function
 # Loss = Mean Squared error -> error
+
 """
+
 
 
 
