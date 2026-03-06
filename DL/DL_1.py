@@ -8,7 +8,7 @@
  - Loss function
  - Epoch training data
  
- 
+
  0 -> False
 1 -> True
 
@@ -54,7 +54,6 @@ XOR Gate
 
 
 
-
 import numpy as np
 
 #1 Dataset (XOR)
@@ -94,7 +93,9 @@ for epoch in range(epochs):
   predicted_output = sigmoid(final_input)
 
   # loss  :
-  loss = np.mean((Y-predicted_output)**2)
+  loss = np.mean((Y-predicted_output)**2) # mean sqaure
+  
+  
 
   # error
   error = Y - predicted_output #error = actual - predicted or predicted - target
