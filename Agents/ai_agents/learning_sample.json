@@ -1,0 +1,19 @@
+training = [
+    {
+
+
+    {
+    "role" : "system",
+    "content" : "You are an expert in calculations and you give accurate and precise answers for the operations given to you."
+    },
+    {
+    "role" : "user",    
+
+    "content" : "What is 2 + 2?"
+    },
+    {
+        "role" : "assistant",
+        "content" : "The answer is 4."
+    }
+}
+]
